@@ -1,3 +1,5 @@
+#include "Daemons/daemons.h"
+
 void print_info() {
   Serial.println("Kedi Kernel running on Arduino C");
   Serial.println("Version 0.0.1");
@@ -8,6 +10,19 @@ void start_serial() {
   Serial.begin(9600);
   delay(3000);
   Serial.print("Serial communication started on 9600 by shell.");
+}
+
+void test_hardware() {
+  // Testing built in LED
+
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_BUILTIN, LOW);
+  Serial.println("Builtin LED tested.");
+
+  stabilize();
+  
 }
 
 void process_command() {
@@ -24,8 +39,12 @@ void process_command() {
     print_info();
   }
 
-  else if (command == "") {}
+  if (command == "hw_test") {
+    test_hardware();
+  }
 
+  else if (command == "") {}
+    
   else {
     Serial.println("Command not recognised by kernel.");
   }
