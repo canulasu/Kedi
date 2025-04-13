@@ -23,9 +23,7 @@ void process_command() {
     print_info();
   }
 
-  else if (command == "") {
-    print_info();
-  }
+  else if (command == "") {}
 
   else {
     Serial.println("Command not recognised by kernel.");
