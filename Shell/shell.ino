@@ -9,9 +9,7 @@ void start_serial() {
   Serial.print("Serial communication started on 9600 by shell.");
 }
 
-void shell() {
-
-  start_serial();
+void process_command() {
   
   Serial.print("pati>>> ");
   while (Serial.available() == 0) {
@@ -23,5 +21,24 @@ void shell() {
 
   if (command == "info") {
     print_info();
+  }
+
+  else if (command == "") {
+    print_info();
+  }
+
+  else {
+    Serial.println("Command not recognised by kernel.");
+  }
+  
+}
+
+// When using API, run this function to start shell, running any other function as main runtime will cause errors!
+void shell_runtime() {
+
+  start_serial();
+
+  while (true) {
+    process_command();
   }
 }
