@@ -1,6 +1,7 @@
 void print_info() {
   Serial.println("Kedi Kernel running on Arduino C");
   Serial.println("Version 0.0.1");
+  Serial.println("Can Ulas Unal & Utku Unal, 2025")
 }
 
 void start_serial() {  
