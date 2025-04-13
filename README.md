@@ -1,2 +1,2 @@
 # Kedi
-Small operating system kernel written in Arduino C.
+The Kedi Kernel (traslating to "cat" in Turkish) is a basic operating system kernel (and soon to be full operating system) meant for basic Arduino compatible AVR and ARM architectures. The kernel is still in its easly sates and is not fully usable.
