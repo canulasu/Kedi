@@ -36,7 +36,7 @@ void process_command() {
 
   Serial.println(command);
 
-  if (command =ake= "info") {
+  if (command == "info") {
     print_info();
   }
 
