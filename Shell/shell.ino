@@ -1,4 +1,5 @@
 #include "Daemons/daemons.h"
+#include "Modules/Bakes/bakes.h"
 
 void print_info() {
   Serial.println("Kedi Kernel running on Arduino C");
@@ -35,12 +36,40 @@ void process_command() {
 
   Serial.println(command);
 
-  if (command == "info") {
+  if (command =ake= "info") {
     print_info();
   }
 
   if (command == "hw_test") {
     test_hardware();
+  }
+
+  if (command == "bake") {
+    Serial.print("bake_executer>>> ");
+    while (Serial.available() == 0) {
+    }
+    String baketorun = Serial.readStringUntil('\n');
+
+    if (baketorun == "1") {
+      bake1();
+    }
+    else if (baketorun == "2") {
+      bake2();
+    }
+    else if (baketorun == "3") {
+      bake3();
+    }
+    else if (baketorun == "4") {
+      bake4();
+    }
+    else if (baketorun == "5") {
+      bake5();
+    }
+
+    else {
+      Serial.println("Bake not recognised!");
+    }
+    
   }
 
   else if (command == "") {}
