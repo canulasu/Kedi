@@ -2,6 +2,9 @@
 #include <Arduino.h>
 
 void execute_code(String code) {
+
+    interrupts();
+    
     if (code.startswith("//")) {
     }
 
