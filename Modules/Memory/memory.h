@@ -15,6 +15,4 @@ extern int intslot3;
 extern int intslot4;
 extern int intslot5;
 
-extern int max_tasks;
-
 #endif
