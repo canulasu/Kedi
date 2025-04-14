@@ -1,5 +1,11 @@
+#include "Modules/Software/software.h"
+#include "Shell/"
+
 void init_kernel() {
+
+  start_serial();
+  
   while (true) {
-    // add scheduler here
+    process_command();
   }
 }
