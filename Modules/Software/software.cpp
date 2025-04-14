@@ -1,9 +1,8 @@
 #include "software.h"
 #include <Arduino.h>
 
-void execute_assembly() {
+void execute_script(String code) {
     noInterrupts();
-    while (true) {
-        // Write execution code here
-    }
+    asm(code);
+    interrupts();
 }
