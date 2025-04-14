@@ -41,11 +41,11 @@ void process_command() {
     print_info();
   }
 
-  if (command == "hw_test") {
+  else if (command == "hw_test") {
     test_hardware();
   }
 
-  if (command == "run") {
+  else if (command == "run") {
     int runtime = 1
     
     Serial.print("kernelscript>>> ");
@@ -64,7 +64,7 @@ void process_command() {
     }
   }
 
-  if (command == "bake") {
+  else if (command == "bake") {
     Serial.print("bake_executer>>> ");
     while (Serial.available() == 0) {
     }
@@ -95,7 +95,7 @@ void process_command() {
   else if (command == "") {}
     
   else {
-    Serial.println("Command not recognised by kernel.");
+    Serial.println("Command not recognised by kernel shell.");
   }
   
 }
