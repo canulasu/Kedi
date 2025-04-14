@@ -3,6 +3,6 @@
 
 #include <Arduino.h>
 
-void execute_assembly();
+void execute_assembly(String code);
 
 #endif
