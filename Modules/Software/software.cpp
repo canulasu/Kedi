@@ -5,9 +5,15 @@ void execute_code(String code) {
     if (code.startswith("//")) {
     }
 
-    else if (code.startswith("print(")) {
+    else if (code.startsWith("print(")) {
         Serial.println(code.replace("print(", ""));
     }
+
+    else if (code.startsWith("puts(")) {
+        Serial.print(code.replace("puts(", ""));
+    }
         
-    else {}
+    else {
+        Serial.println("Command is not regonised by Kernel Interpreter!");
+    }
 }
