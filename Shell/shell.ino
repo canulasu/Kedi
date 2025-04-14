@@ -1,5 +1,6 @@
 #include "Daemons/daemons.h"
 #include "Modules/Bakes/bakes.h"
+#include "Modules/Software/software.h"
 
 void print_info() {
   Serial.println("Kedi Kernel running on Arduino C");
@@ -42,6 +43,25 @@ void process_command() {
 
   if (command == "hw_test") {
     test_hardware();
+  }
+
+  if (command == "run") {
+    int runtime = 1
+    
+    Serial.print("kernelscript>>> ");
+    while (Serial.available() == 0) {
+    }
+    
+    String program = Serial.readStringUntil('\n');
+    
+    while (runtime == 1) {
+      if (program == "exit") {
+        runtime = 0
+      }
+      else {
+        execute_code(program);
+      }
+    }
   }
 
   if (command == "bake") {
